@@ -3,12 +3,11 @@
 sudo apt update -y
 sudo apt install haproxy -y
 echo 'ENABLED=1' | sudo tee -a /etc/default/haproxy
-printf %s "
-frontend load_balancer
-    bind *:80
-    mode http
-    default_backend webserver
-backend webserver
+printf %s "frontend http
+    	bind *:80
+    	mode http
+    	default_backend web-backend
+backend web-backend
     balance roundrobin
     server 4970-web-01 54.227.11.69 check
     server 4970-web-02 34.229.17.111 check
