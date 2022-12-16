@@ -3,6 +3,6 @@
 sudo apt-get -y update
 sudo apt -y install nginx
 default_port="listen\s.[0-9]+\sdefault_server"
-sed -ir "s/$default_port/"listen 80 default_server"g/" /etc/nginx/sites-available/default
-sed -ir "s/$default_port/"listen 80 default_server"g/" /etc/nginx/sites-available/defaultsed -ir "s/$default_port/"listen 80 default_server"g/" /etc/nginx/sites-enabled/default
+sed -ir "s/$default_port/"listen 80 default_server"/" /etc/nginx/sites-available/default
+sed -ir "s/$default_port/"listen 80 default_server"/" /etc/nginx/sites-available/defaultsed -ir "s/$default_port/"listen 80 default_server"g/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
