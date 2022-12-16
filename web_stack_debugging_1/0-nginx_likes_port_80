@@ -2,6 +2,6 @@
 #iDebug to ensure server listens on port 80
 sudo apt-get -y update
 sudo apt -y install nginx
-sed -i  's/8080/80/g' /etc/nginx/sites-enabled/default
-service nginx startt
+default_port = "listen\s.[0-9]+\sdefault_server"
+sed -i "s/$default_port/"listen 80 default_server"g/" /etc/nginx/sites-available/default
 sudo service nginx restart
