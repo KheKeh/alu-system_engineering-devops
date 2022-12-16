@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#iDebug to ensure server listens on port 80
+sudo apt-get -y update
+ied -i "s/"listen\s.[0-9]+\sdefault_server"/"listen 80 default_server"g/" /etc/nginx/sites-available/default
+sudo service nginx restart
