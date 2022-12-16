@@ -30,6 +30,5 @@ printf %s "server {
                 return 301 https://alu-intranet.hbtn.io/;
         }
 }" | sudo tee /etc/nginx/sites-available/default
-sudo chown -R "$USER":"$USER" /etc/nginx/sites-available/default
 sudo service nginx restart
 
